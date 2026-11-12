@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — Portfolio</title>
+    <meta name="description" content="Interactive body scan portrait revealing personal interests, vision, and adorations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Redaction+50:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="about-body">
+    <main class="about-page">
+
+        <div class="portrait-wrapper">
+
+            <!-- Flanking Editorial Heading Texts -->
+            <div class="portrait-flank portrait-flank--left" aria-hidden="true">
+                <span class="portrait-flank__text">Hey! I am</span>
+            </div>
+
+            <!-- Portrait Image Container -->
+            <div class="portrait-container" aria-label="Interactive body scan portrait">
+                <img src="../assets/TImage.png" alt="Portrait" class="portrait-image">
+
+                <!-- Hover Zone: Forehead (Interests) -->
+                <div class="hover-zone hinting" id="zone-forehead" data-panel="panel-forehead" role="button" tabindex="0" aria-label="Forehead region: Interests — hover or tap to explore">
+                    <div class="scanner-line"></div>
+                </div>
+
+                <!-- Hover Zone: Eyes (Vision) -->
+                <div class="hover-zone hinting" id="zone-eyes" data-panel="panel-eyes" role="button" tabindex="0" aria-label="Eyes region: Vision — hover or tap to explore">
+                    <div class="scanner-line"></div>
+                </div>
+
+                <!-- Hover Zone: Heart (Adorations) -->
+                <div class="hover-zone hinting" id="zone-heart" data-panel="panel-heart" role="button" tabindex="0" aria-label="Heart region: Adorations — hover or tap to explore">
+                    <div class="scanner-line"></div>
+                </div>
+            </div>
+
+            <div class="portrait-flank portrait-flank--right" aria-hidden="true">
+                <span class="portrait-flank__text">Hamza</span>
+            </div>
+
+            <!-- Hint caption that fades with discoverability pulse -->
+            <p class="about-hint-caption" id="aboutHintCaption">Hover or tap zones to scan</p>
+
+            <!-- Info Panel: Forehead → Interests (right side) -->
+            <aside class="info-panel panel-right" id="panel-forehead" aria-live="polite">
+                <div class="panel-connector"></div>
+                <span class="panel-tag">// 01_NEURAL</span>
+                <h3>Interests</h3>
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Physics</li>
+                    <li>Learning and discovering the physical capabilities of the human body</li>
+                    <li>Growing further as a person</li>
+                    <li>Leadership</li>
+                    <li>Video Games</li>
+                </ul>
+            </aside>
+
+            <!-- Info Panel: Eyes → Vision (left side) -->
+            <aside class="info-panel panel-left" id="panel-eyes" aria-live="polite">
+                <div class="panel-connector"></div>
+                <span class="panel-tag">// 02_OPTICS</span>
+                <h3>Vision</h3>
+                <ul>
+                    <li>Specialize myself to the field of Computer Science</li>
+                    <li>Acquire vast knowledge in mathematics</li>
+                    <li>Do my best to help others in any way, shape and form</li>
+                    <li>Spread knowledge for the betterment of others</li>
+                    <li>Live life Healthy and keep improving fitness</li>
+                </ul>
+            </aside>
+
+            <!-- Info Panel: Heart → Adorations (right side) -->
+            <aside class="info-panel panel-right" id="panel-heart" aria-live="polite">
+                <div class="panel-connector"></div>
+                <span class="panel-tag">// 03_CORE</span>
+                <h3>Adorations</h3>
+                <ul>
+                    <li>Friends</li>
+                    <li>Family</li>
+                    <li>Math</li>
+                    <li>Playing Sports, especially Cricket</li>
+                    <li>Watching Sports</li>
+                </ul>
+            </aside>
+
+        </div>
+
+        <!-- Back to Clock Navigation Link -->
+        <a href="../index.html" class="back-link">← Back to Clock</a>
+
+    </main>
+
+    <script src="../js/about.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Time & Craft</title>
+    <meta name="description" content="A minimalist, spacious portfolio navigation interface driven by a functioning analog clock.">
+    
+    <!-- Google Fonts Preconnect & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Redaction+50:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="home">
+        <!-- Left Text Column -->
+        <section class="text-column text-column--left">
+            <h2 class="text-column__heading">Muhammad Hamza Javaid</h2>
+            <p class="text-column__desc">
+                Driven by a constant desire to grow, approach every task
+                with ambition and determination to push beyond expectations.
+            </p>
+        </section>
+
+        <!-- Center Clock Navigation Zone -->
+        <section class="clock-container" aria-label="Analog clock navigation container">
+            <svg id="clock" class="clock-svg" viewBox="0 0 400 400" role="img" aria-label="Navigation clock">
+                <!-- Clock face background & outer boundary -->
+                <circle class="clock-face" cx="200" cy="200" r="182" />
+                <circle class="clock-face-inner-ring" cx="200" cy="200" r="172" />
+                
+                <!-- Tick Marks Group -->
+                <g id="ticks" class="ticks-group" aria-hidden="true"></g>
+
+                <!-- Markers (Numbers + Interactive Navigation Labels) -->
+                <g id="markers" class="markers-group">
+                    <!-- Nav Labels at Cardinal Positions -->
+                    <text class="nav-label nav-label--achievements" id="nav-work" x="200" y="52" data-nav="pages/achievements.html" role="link" aria-label="Achievements page link">ACHIEVEMENTS</text>
+                    <text class="marker-text" x="274" y="72">1</text>
+                    <text class="marker-text" x="328" y="126">2</text>
+                    <text class="nav-label nav-label--about" id="nav-about" x="348" y="200" data-nav="pages/about.html" role="link" aria-label="About Me page link">ABOUT ME</text>
+                    <text class="marker-text" x="328" y="274">4</text>
+                    <text class="marker-text" x="274" y="328">5</text>
+                    <text class="nav-label" id="nav-concept" x="200" y="348" data-nav="pages/concept.html" role="link" aria-label="Concept page link">CONCEPT</text>
+                    <text class="marker-text" x="126" y="328">7</text>
+                    <text class="marker-text" x="72" y="274">8</text>
+                    <text class="nav-label" id="nav-contact" x="52" y="200" data-nav="https://m-hamza-javaid4.github.io/Heuser/CS_CRP/Homework_6/index.html" role="link" aria-label="Game page link">GAME</text>
+                    <text class="marker-text" x="72" y="126">10</text>
+                    <text class="marker-text" x="126" y="72">11</text>
+                </g>
+
+                <!-- Hands -->
+                <!-- Hour hand: length 80px, anchored at center (200, 200) pointing straight up to (200, 120) -->
+                <g id="hour-group" class="hand-group">
+                    <line class="hand-hour" x1="200" y1="214" x2="200" y2="120" />
+                </g>
+
+                <!-- Minute hand: length 124px, anchored at center (200, 200) pointing straight up to (200, 76) -->
+                <g id="minute-group" class="hand-group">
+                    <line class="hand-minute" x1="200" y1="220" x2="200" y2="76" />
+                </g>
+
+                <!-- Pivot Cap / Center Dot -->
+                <circle class="clock-center-dot-outer" cx="200" cy="200" r="6" />
+                <circle class="clock-center-dot-inner" cx="200" cy="200" r="2.2" />
+            </svg>
+        </section>
+
+        <!-- Right Text Column -->
+        <section class="text-column text-column--right">
+            <h2 class="text-column__heading">Unconventional</h2>
+            <p class="text-column__desc">
+                This portfolio is the result of unique concepts, outside
+                the norm, reflecting what I have accomplished and look
+                to accomplish.
+            </p>
+        </section>
+    </main>
+
+    <script src="js/clock.js"></script>
+</body>
+</html>
