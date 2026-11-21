@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements — Portfolio</title>
+    <meta name="description" content="Discover achievements through an interactive rotary phone dial. Dial a digit and lift the handset.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Redaction+50:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="achievements-body">
+    <main class="achievements-page">
+
+        <div class="phone-assembly">
+
+            <!-- Handset resting on cradle -->
+            <div class="handset" id="handset" role="button" tabindex="0" aria-label="Phone handset — drag upward to hear achievement">
+                <div class="handset-ear"></div>
+                <div class="handset-handle"></div>
+                <div class="handset-mouth"></div>
+            </div>
+
+            <!-- Cradle marks -->
+            <div class="cradle" aria-hidden="true"></div>
+
+            <!-- Rotary Dial -->
+            <div class="dial-container">
+                <svg id="rotary-dial" viewBox="0 0 400 400" aria-label="Rotary dial phone with 9 digits">
+                    <!-- Outer ring (static border) -->
+                    <circle class="dial-outer-ring" cx="200" cy="200" r="185" />
+                    
+                    <!-- Decorative inner bezel -->
+                    <circle class="dial-bezel" cx="200" cy="200" r="180" />
+
+                    <!-- Finger stop (static stop bracket at ~330deg) -->
+                    <!-- At angle 330deg on radius 130px: cx=200+130*cos(240)=135, cy=200+130*sin(240)=87.4 -->
+                    <g id="finger-stop-bracket" class="finger-stop-group">
+                        <path class="finger-stop-metal" d="M 125,72 L 144,95 L 138,103 L 118,80 Z" />
+                        <circle class="finger-stop-screw" cx="131" cy="87" r="2.5" />
+                    </g>
+
+                    <!-- Dial plate (rotates with holes and labels) -->
+                    <g id="dial-plate">
+                        <!-- Dial disc face -->
+                        <circle class="dial-plate-face" cx="200" cy="200" r="176" />
+                        
+                        <!-- Inner track circle for refined visual rhythm -->
+                        <circle class="dial-inner-track" cx="200" cy="200" r="130" />
+
+                        <!-- Finger holes group (populated with data-digit 1-9) -->
+                        <g id="finger-holes-group">
+                            <circle class="finger-hole" data-digit="1" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="2" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="3" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="4" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="5" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="6" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="7" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="8" cx="200" cy="70" r="21" />
+                            <circle class="finger-hole" data-digit="9" cx="200" cy="70" r="21" />
+                        </g>
+
+                        <!-- Digit labels group (1-9) -->
+                        <g id="digit-labels-group">
+                            <text class="digit-label" data-digit="1">1</text>
+                            <text class="digit-label" data-digit="2">2</text>
+                            <text class="digit-label" data-digit="3">3</text>
+                            <text class="digit-label" data-digit="4">4</text>
+                            <text class="digit-label" data-digit="5">5</text>
+                            <text class="digit-label" data-digit="6">6</text>
+                            <text class="digit-label" data-digit="7">7</text>
+                            <text class="digit-label" data-digit="8">8</text>
+                            <text class="digit-label" data-digit="9">9</text>
+                        </g>
+
+                        <!-- Center hub chrome dome -->
+                        <circle class="dial-hub-outer" cx="200" cy="200" r="28" />
+                        <circle class="dial-hub-inner" cx="200" cy="200" r="16" />
+                        <circle class="dial-hub-dot" cx="200" cy="200" r="5" />
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Instruction hint -->
+            <p class="dial-hint" id="dialHint">Click a number to dial, then lift the handset</p>
+
+        </div>
+
+        <!-- Chat Bubble -->
+        <aside class="chat-bubble" id="chatBubble" aria-live="polite">
+            <div class="chat-arrow"></div>
+            <div class="chat-header">
+                <span class="chat-digit-tag" id="chatDigitTag">DIALED // 01</span>
+                <span class="chat-status-pulse"></span>
+            </div>
+            <p class="chat-text" id="chatText"></p>
+        </aside>
+
+        <!-- Back to Clock Navigation Link -->
+        <a href="../index.html" class="back-link">← Back to Clock</a>
+
+    </main>
+
+    <script src="../js/achievements.js"></script>
+</body>
+</html>
